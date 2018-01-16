@@ -1,0 +1,25 @@
+<div>
+    <h1>Log in</h1>
+    <%- #email, email confirmation password and password confirmation -%>
+
+    <%= radio_button_tag(:account_name, "Carrier") %>
+    <%= label_tag(:account_name, "Carrier") %>
+    <%= radio_button_tag(:account_name, "Vendor") %>
+    <%= label_tag(:account_name, "Vendor") %>
+    <%= radio_button_tag(:account_name, "Admin") %>
+    <%= label_tag(:account_name, "Admin") %>
+</div>
+<div>
+<h1>Sign up</h1>
+<%-#email, email confirmation password and password confirmation  -%>
+    <%= radio_button_tag(:account_name, "Carrier") %>
+    <%= label_tag(:account_name, "Carrier") %>
+    <%= radio_button_tag(:account_name, "Vendor") %>
+    <%= label_tag(:account_name, "Vendor") %>
+</div>
+
+<ul>
+    <li><a href="/admin">admin</a></li>
+    <li><a href="/carriers">carrier</a></li>
+    <li><a href="/vendors">vendor</a></li>
+</ul>
