@@ -1,6 +1,10 @@
+<%= link_to "Create New Order", new_order_path %>
+
 <ul>
     <% @orders.each do |order| %>
-        <li> <%= link_to order.order_no, order_path(order) %> ----- <%= link_to "delete", order_path(order), method: :delete %> </li>
+        <li> 
+            <%= link_to order.order_no, order_path(order) %> - <%= link_to "delete", order_path(order), method: :delete %> | <%= link_to "edit", edit_order_path(order) %> 
+        </li>
     <% end %>
-    <%= link_to "return to admin dashboard", admin_path %>
-</ul>
+    </ul>
+<%= link_to "return to admin dashboard", admin_path %>

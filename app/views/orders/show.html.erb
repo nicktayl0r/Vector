@@ -7,4 +7,5 @@
 <h1><%= @order.driver%></h1>
 <h1><%= @order.delivery_deadline%></h1>
 <h1><%= @order.delivery_timestamp%></h1>
+<%= link_to "delete", @order, method: :delete %>
 <%= link_to "return to orders overview", orders_path %>

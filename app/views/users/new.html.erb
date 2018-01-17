@@ -1,21 +1,55 @@
 <div>
     <h1>Log in</h1>
-    <%- #email, email confirmation password and password confirmation -%>
-
-    <%= radio_button_tag(:account_name, "Carrier") %>
-    <%= label_tag(:account_name, "Carrier") %>
-    <%= radio_button_tag(:account_name, "Vendor") %>
-    <%= label_tag(:account_name, "Vendor") %>
-    <%= radio_button_tag(:account_name, "Admin") %>
-    <%= label_tag(:account_name, "Admin") %>
+    <p id="alert"><%= alert %></p>
+    <%= form_tag sessions_path do %>
+      <div class="field">
+        <%= label_tag :email %>
+        <%= text_field_tag :email, params[:email] %>
+      </div>
+      <div class="field">
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
+      </div>
+      <div class="actions"><%= submit_tag "Log In" %></div>
+    <% end %>
 </div>
 <div>
-<h1>Sign up</h1>
-<%-#email, email confirmation password and password confirmation  -%>
-    <%= radio_button_tag(:account_name, "Carrier") %>
-    <%= label_tag(:account_name, "Carrier") %>
-    <%= radio_button_tag(:account_name, "Vendor") %>
-    <%= label_tag(:account_name, "Vendor") %>
+    <h1>Sign Up</h1>
+    <%= form_for @user do |f| %>
+      <% if @user.errors.any? %>
+        <div class="error_messages">
+          <h2>Form is invalid</h2>
+          <ul>
+            <% for message in @user.errors.full_messages %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </div>
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+
+      <div class="field">
+        <%= f.label :account_type %><br />
+        <%= f.label :account_type, "Carrier", :value => "Carrier"  %>
+        <%= f.radio_button :account_type, "Carrier" %>
+        <%= f.label :account_type, "Vendor", :value => "Vendor" %>
+        <%= f.radio_button :account_type, "Vendor" %>
+      </div>
+      <div class="actions"><%= f.submit %></div>
+      
+    <% end %>
 </div>
 
 <ul>
