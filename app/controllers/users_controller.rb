@@ -31,7 +31,6 @@ class UsersController < ApplicationController
         end
     end
     def destroy
-        puts "destroy called for user #{params[:id]}"
         @user = User.find(params[:id])
         @user.destroy
         redirect_to root_path

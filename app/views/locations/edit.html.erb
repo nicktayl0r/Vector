@@ -1,31 +1,31 @@
 <h1>Edit Location</h1>
 
-<%= form_for @location do |u| %>
-    <div>
-        <%= u.label :street %>
-        <%= u.text_field :street %>
-    </div>
-    <div>
-        <%= u.label :city %>
-        <%= u.text_field :city %>
-    </div>
-    <div>
-        <%= u.label :phone %>
-        <%= u.text_field :phone %>
-    </div>
-    <div>
-        <%= u.label :email %>
-        <%= u.text_field :email %>
-    </div>
-    <div>
-        <%= u.label :zipcode %>
-        <%= u.text_field :zipcode %>
-    </div>
-    <div>
-        <%= u.label :state %>
-        <%= u.text_field :state %>
-    </div>
-    <%= u.submit "Update Location" %>
-<% end %>
+<%= form_for [@user, @location] do |u| %>
+        <div>
+            <%= u.label :street %>
+            <%= u.text_field :street %>
+        </div>
+        <div>
+            <%= u.label :city %>
+            <%= u.text_field :city %>
+        </div>
+        <div>
+            <%= u.label :phone %>
+            <%= u.text_field :phone %>
+        </div>
+        <div>
+            <%= u.label :email %>
+            <%= u.text_field :email %>
+        </div>
+        <div>
+            <%= u.label :zipcode %>
+            <%= u.text_field :zipcode %>
+        </div>
+        <div>
+            <%= u.label :state %>
+            <%= u.text_field :state %>
+        </div>
+        <%= u.submit "Update Location" %>
 
-<%= link_to "Back to the Location List", locations_path %>
+    <%= link_to "Back to the Location List", user_locations_path(:user_id) %>
+<% end %>

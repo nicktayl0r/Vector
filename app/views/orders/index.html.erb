@@ -2,9 +2,9 @@
 <ul>
 	<% @orders.each do |order| %>
 		<li>
-			<%= order.origin.to_s + " " + order.destination.to_s + " " + order.delivery_deadline.to_s + " " + order.price.to_s + " " + order.weight.to_s + " " + order.cube.to_s %> -|- 
-			<%= link_to "delete", order_path(order), method: :delete, data: { confirm: "Remove Order" } %>
-			<%= link_to "edit", edit_order_path(order) %>
+			<%= order.origin.to_s + " " + order.destination.to_s + " " + order.delivery_deadline.to_s + " " + order.price.to_s + " " + order.weight.to_s + " | " + order.cube.to_s %> -|- 
+			<%= link_to "delete", user_order_path(:user_id, :id), method: :delete, data: { confirm: "Remove Order" } %>
+			<%= link_to "edit", edit_user_order_path(:user_id, :id) %>
 		</li>
 	<% end %>
 </ul>

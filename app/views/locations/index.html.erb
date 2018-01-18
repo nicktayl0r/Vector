@@ -1,10 +1,10 @@
-<h2> Locations for <%= current_user.email %></h2>
+<h2> Locations for <%= current_user.email %> </h2>
 <ul>
 	<% @locations.each do |location| %>
 		<li>
 			<%= location.street.to_s + " " + location.city.to_s + " " + location.zipcode.to_s + " " + location.state.to_s %> -|- 
-			<%= link_to "delete", location_path(location), method: :delete, data: { confirm: "Remove Location" } %>
-			<%= link_to "edit", edit_location_path(location) %>
+			<%= link_to "delete", user_location_path(:user_id, :id), method: :delete, data: { confirm: "Remove Location" } %>
+			<%= link_to "edit", edit_user_location_path(:user_id, :id) %>
 		</li>
 	<% end %>
 </ul>
