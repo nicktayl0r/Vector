@@ -1,0 +1,12 @@
+    <%= form_for @order do |item| %>
+        <div>
+          <%= item.label :origin %>
+          <%= item.text_field :origin %>
+        </div>
+        <div>
+          <%= item.label :destination %>
+          <%= item.text_field :destination %>
+        </div>
+        <%= item.submit "create" %>
+    <% end %>
+    <%= link_to "HOME", vendor_path %>

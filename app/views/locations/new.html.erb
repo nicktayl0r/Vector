@@ -1,0 +1,29 @@
+<h1>New Location</h1>
+<%= form_for @location do |l| %>
+    <div>
+        <%= l.label :street %>
+        <%= l.text_field :street %>
+    </div>
+    <div>
+        <%= l.label :city %>
+        <%= l.text_field :city %>
+    </div>
+    <div>
+        <%= l.label :phone %>
+        <%= l.text_field :phone %>
+    </div>
+    <div>
+        <%= l.label :zipcode%>
+        <%= l.text_field :zipcode%>
+    </div>
+    <div>
+        <%= l.label :state %>
+        <%= l.text_field :state %>
+    </div>
+    <div>
+        <%= l.label :email %>
+        <%= l.text_field :email %>
+    </div>
+  <%= l.submit "Create New Location" %>
+<% end %>
+<%= link_to "Return Home", locations_path %>

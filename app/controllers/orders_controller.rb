@@ -1,8 +1,4 @@
 class OrdersController < ApplicationController
-    before_action :set_house, only: [:show, :edit, :update, :destroy]
-    # Prevent anonymous users from 
-    # performing CUD on houses
-    before_action :authorize, except: [:index, :show]
     def new
         @order = Order.new
     end
@@ -22,9 +18,8 @@ class OrdersController < ApplicationController
     end
     def create
         @order = Order.new(order_params)
-
         if @order.save
-            redirect_to orders_path
+            redirect_to vendor_path
         else
             render :new
         end
@@ -39,6 +34,6 @@ class OrdersController < ApplicationController
     end
     private
     def order_params
-        params.require(:order).permit(:order_no, :cubic_meters, :weight, :order_status, :ask, :vendor, :driver, :delivery_deadline, :delivery_timestamp)
+        params.require(:order).permit(:origin, :destination, :delivery_deadline, :price, :weight, :cube)
     end
 end

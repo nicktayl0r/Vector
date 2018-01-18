@@ -1,0 +1,57 @@
+Orders as a subfile of vendors
+
+Signin choose vendor or carrier
+Login choose admin vendor or carrier=> account splash page
+
+Admin
+All accounts
+All orders completed
+Create new admin
+
+Vendor
+Show open orders and complete orders separately
+Edit open orders but not complete orders
+
+carrier
+Show all open orders
+Show all active orders for that driver
+
+Order status's: open active select
+
+Lucid chart
+
+
+Tuesday
+============================
+Full crud functionality
+Paperclip uploads
+Pages.controller for static pages
+!!!   Root route display loading page
+Navigation
+!!!   User model
+!!!   Log in, Sign up  & Log out
+!!! All other Models generated
+Model associations
+User stories completed
+
+=============================
+Wednesday
+Filtering tables
+Sortable tables
+
+Thursday
+Styling
+
+For Users
+	editing allows the editing of that account in its relevant table
+	destroying kills the account in the relevant table
+	new user = select type => creates user entry => creates form for this particular user
+
+
+cant delete
+
+rails g model User email password_digest account_typephone number
+
+Crud users, locations, orders
+
+

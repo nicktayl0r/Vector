@@ -1,0 +1,32 @@
+<h1>Edit <%= @user.email %> </h1>
+
+<%= form_for @user do |u| %>
+  <div>
+    <%= u.label :email %>
+    <%= u.text_field :email %>
+  </div>
+  <div>
+    <%= u.label :password %>
+    <%= u.password_field :password %>
+  </div>
+  <div>
+  <%= u.label :password_confirmation %>
+  <%= u.password_field :password_confirmation %>
+</div>
+  <div>
+    <%= u.label :phone_number %>
+    <%= u.text_field :phone_number %>
+  </div>
+  <div>
+    <%= u.label :account_type %><br />
+    <%= u.label :account_type, "Carrier", :value => "Carrier"  %>
+    <%= u.radio_button :account_type, "Carrier" %>
+    <%= u.label :account_type, "Vendor", :value => "Vendor" %>
+    <%= u.radio_button :account_type, "Vendor" %>
+    <%= u.label :account_type, "Admin", :value => "Admin" %>
+    <%= u.radio_button :account_type, "Admin" %>
+  </div>
+  <%= u.submit "Update User" %>
+<% end %>
+
+<%= link_to "Back to the User Viewer", users_path %>

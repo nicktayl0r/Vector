@@ -13,13 +13,20 @@ class SessionsController < ApplicationController
           # Successful log in!
           session[:user_id] = user.id
           # notice: is a special flash[:notice] accessor
-          redirect_to root_path, notice: 'Logged in!'
+          if user.account_type == "Admin"
+            redirect_to admin_path
+          elsif user.account_type == "Vendor"
+            redirect_to vendor_path
+          else
+            redirect_to carrier_path
+          end
         else
           # flash.now is used for messaging
           # during the CURRENT request
           flash.now.alert = 'Invalid login credentials - try again!'
           render :new
         end
+        
       end
     
       def destroy

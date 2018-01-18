@@ -1,37 +1,29 @@
 <h1>New Order</h1>
 <%= form_for @order do |o| %>
     <div>
-        <%= o.label :order_no %>
-        <%= o.text_field :order_no %>
+        <%= o.label :origin %>
+        <%= o.select(:origin, options_for_select(Location.all.map(&:street))) %>
     </div>
     <div>
-        <%= o.label :cubic_meters %>
-        <%= o.text_field :cubic_meters %>
+        <%= o.label :destination %>
+        <%= o.select(:destination, options_for_select(Location.all.map(&:street))) %>
     </div>
     <div>
         <%= o.label :weight %>
         <%= o.text_field :weight %>
     </div>
     <div>
-        <%= o.label :ask %>
-        <%= o.text_field :ask %>
+        <%= o.label :cube %>
+        <%= o.text_field :cube %>
     </div>
     <div>
-        <%= o.label :vendor %>
-        <%= o.text_field :vendor %>
-    </div>
-    <div>
-        <%= o.label :driver %>
-        <%= o.text_field :driver %>
+        <%= o.label :price %>
+        <%= o.text_field :price %>
     </div>
     <div>
         <%= o.label :delivery_deadline %>
         <%= o.text_field :delivery_deadline %>
     </div>
-    <div>
-        <%= o.label :delivery_timestamp %>
-        <%= o.text_field :delivery_timestamp %>
-    </div>
   <%= o.submit "Create New Order" %>
 <% end %>
-<%= link_to "Return to Orders", orders_path %>
+<%= link_to "Return Home", vendor_path %>
