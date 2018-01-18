@@ -11,6 +11,7 @@ class CreateOrders < ActiveRecord::Migration[5.1]
       t.string :status
       t.integer :weight
       t.float :cube
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
