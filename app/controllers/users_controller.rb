@@ -8,8 +8,8 @@ class UsersController < ApplicationController
     end
     def index
         @users = User.all
-        @locations = locations.new
-        @orders = orders.new
+        @location = Location.new
+        @order = Order.new
         
     end
     def create

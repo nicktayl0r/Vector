@@ -2,7 +2,7 @@
 <ul>
 	<% @locations.each do |location| %>
 		<li>
-			<%= location.street.to_s + " " + location.city.to_s + " " + location.zipcode.to_s + " " + location.state.to_s %> -|- 
+			<%= location.street.to_s + " " + location.city.to_s + " " + location.zipcode.to_s + " " + location.state.to_s + " contact: " + location.email %> -|- 
 			<%= form_tag(user_location_path(current_user.id, location.id), method: :delete) do %>
 				<div><%= submit_tag 'Delete' %></div>
 			<% end %>

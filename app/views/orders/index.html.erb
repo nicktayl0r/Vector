@@ -3,8 +3,10 @@
 	<% if current_user.account_type == "vendor" %>
 		<% current_user.orders.each do |o| %>
 			<li>
-				<%= o.origin.to_s + " " +o.destination.to_s + " " +o.delivery_deadline.to_s + " " +o.price.to_s + " " +o.weight.to_s + " | " +o.cube.to_s %> -|- 
-				<%= link_to "delete", user_order_path(current_user.id, o.id), method: :delete, data: { confirm: "Remove Order" } %>
+				<%= "Origin: " + o.origin.to_s + " Destination: " +o.destination.to_s + " Delivered By: " + o.delivery_deadline.to_formatted_s(:short) + " Price: " +o.price.to_s + " Pounds: " +o.weight.to_s + " Cubic Meters: " +o.cube.to_s %> -|- 
+				<%= form_tag(user_order_path(current_user.id, o.id), method: :delete) do %>
+					<div><%= submit_tag 'Delete' %></div>					
+				<% end %>	
 				<%= link_to "edit", edit_user_order_path(current_user.id,o.id) %>
 			</li>
 		<% end %>
