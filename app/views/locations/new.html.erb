@@ -1,5 +1,5 @@
-<h1>New Location</h1>
-<%= form_for @location do |l| %>
+<h1>New Location <%= current_user.id %> </h1>
+<%= form_for [:user, @location] do |l| %>
     <div>
         <%= l.label :street %>
         <%= l.text_field :street %>
@@ -26,4 +26,4 @@
     </div>
   <%= l.submit "Create New Location" %>
 <% end %>
-<%= link_to "Return Home", locations_path %>
+<%= link_to "Return Home", vendor_path %>

@@ -18,8 +18,9 @@ class OrdersController < ApplicationController
     end
     def create
         @order = Order.new(order_params)
+        @order.user_id = params[:user_id]
         if @order.save
-            redirect_to vendor_path
+            redirect_to user_orders_path(current_user.id)
         else
             render :new
         end
@@ -27,7 +28,7 @@ class OrdersController < ApplicationController
     def update
         @order = Order.find(params[:id])
         if @order.update_attributes(order_params)
-            redirect_to orders_path
+            redirect_to user_orders_path
         else
             render :edit
         end

@@ -5,8 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
 users = User.create([
     {email: "TranNguyen@email.com", password: "abc123", phone_number: "9998887777", account_type: "carrier"},
-    {email: "AndyMiller@email.com", password: "abc123", phone_number: "9998887777", account_type: "admin"},
+    {email: "admin", password: "admin", phone_number: "9998887777", account_type: "admin"},
     {email: "PhilDerrick@email.com", password: "abc123", phone_number: "9998887777", account_type: "vendor"}
+])
+Location.destroy_all
+locations = Location.create([
+    {street: "dummy", city: "dummy" , phone: "dummy" ,email: "dummy" ,zipcode: "dummy", state: "dummy"}
 ])

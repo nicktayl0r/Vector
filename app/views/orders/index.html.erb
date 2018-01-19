@@ -1,12 +1,13 @@
 <h2> Orders for <%= current_user.email %></h2>
 <ul>
-	<% @orders.each do |order| %>
+	<%= @user.orders.each do %>
 		<li>
 			<%= order.origin.to_s + " " + order.destination.to_s + " " + order.delivery_deadline.to_s + " " + order.price.to_s + " " + order.weight.to_s + " | " + order.cube.to_s %> -|- 
-			<%= link_to "delete", user_order_path(:user_id, :id), method: :delete, data: { confirm: "Remove Order" } %>
-			<%= link_to "edit", edit_user_order_path(:user_id, :id) %>
+			<%= link_to "delete", user_order_path(current_user.id, :id), method: :delete, data: { confirm: "Remove Order" } %>
+			<%= link_to "edit", edit_user_order_path(current_user.id, order.id) %>
 		</li>
 	<% end %>
 </ul>
 
-<%= link_to "Return to Dashboard", vendor_path %>
+#if statement if admin one link if vendor another, etc
+<%= link_to "Return to Dashboard", root_path + current_user.account_type.to_s %>

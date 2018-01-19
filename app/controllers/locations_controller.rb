@@ -14,12 +14,14 @@ class LocationsController < ApplicationController
         @location = Location.find(params[:id])
     end
     def edit
+        @user = User.find(params[current_user.id])
         @location = Location.find(params[:id])
     end
-    def create
+    def create       
         @location = Location.new(location_params)
+        @location.user_id = params[:user_id]
         if @location.save
-            redirect_to vendor_path
+            redirect_to user_locations_path(current_user.id)
         else
             render :new
         end

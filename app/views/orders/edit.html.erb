@@ -1,6 +1,6 @@
-<h1>Edit Order <%= @order.origin %></h1>
+<h1>Edit Order <%= @order.id %></h1>
 
-<%= form_for @order do |o| %>
+<%= form_for [:user, @order] do |o| %>
     <div>
         <%= o.label :origin %>
         <%= o.text_field :origin %>
@@ -29,4 +29,4 @@
   <%= o.submit "Update Order" %>
 <% end %>
 
-<%= link_to "Return to Orders", orders_path %>
+<%= link_to "Return to Orders", user_orders_path %>

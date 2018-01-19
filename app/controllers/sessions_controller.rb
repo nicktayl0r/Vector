@@ -13,9 +13,9 @@ class SessionsController < ApplicationController
           # Successful log in!
           session[:user_id] = user.id
           # notice: is a special flash[:notice] accessor
-          if user.account_type == "Admin"
+          if user.account_type == "admin"
             redirect_to admin_path
-          elsif user.account_type == "Vendor"
+          elsif user.account_type == "vendor"
             redirect_to vendor_path
           else
             redirect_to carrier_path

@@ -19,12 +19,12 @@
   </div>
   <div>
     <%= u.label :account_type %><br />
-    <%= u.label :account_type, "Carrier", :value => "Carrier"  %>
-    <%= u.radio_button :account_type, "Carrier" %>
-    <%= u.label :account_type, "Vendor", :value => "Vendor" %>
-    <%= u.radio_button :account_type, "Vendor" %>
-    <%= u.label :account_type, "Admin", :value => "Admin" %>
-    <%= u.radio_button :account_type, "Admin" %>
+    <%= u.label :account_type, "carrier", :value => "carrier"  %>
+    <%= u.radio_button :account_type, "carrier" %>
+    <%= u.label :account_type, "vendor", :value => "vendor" %>
+    <%= u.radio_button :account_type, "vendor" %>
+    <%= u.label :account_type, "admin", :value => "admin" %>
+    <%= u.radio_button :account_type, "admin" %>
   </div>
   <%= u.submit "Update User" %>
 <% end %>
