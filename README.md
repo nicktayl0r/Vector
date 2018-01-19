@@ -25,5 +25,6 @@ This application was made with Ruby on Rails and PostGreSQL.
 ## Future Items
 
 * Upload Images/ Identification
-* create a favicon
-* Create a ratings systems
+* Create a favicon
+* Create a ratings system
+* Build out user profiles
