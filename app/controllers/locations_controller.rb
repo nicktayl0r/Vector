@@ -6,15 +6,14 @@ class LocationsController < ApplicationController
         @locations = Location.all
     end
     def destroy
-        @location = Location.find(params[:id])
+        @location = Location.find(params[:location_id])
         @location.destroy
-        redirect_to locations_path
+        redirect_to user_locations_path(current_user)
     end
     def show
         @location = Location.find(params[:id])
     end
     def edit
-        @user = User.find(params[current_user.id])
         @location = Location.find(params[:id])
     end
     def create       

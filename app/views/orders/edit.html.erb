@@ -1,6 +1,7 @@
-<h1>Edit Order <%= @order.id %></h1>
+<h1>Order No. <%= @order.id %></h1>
 
 <%= form_for [:user, @order] do |o| %>
+    <% if current_user.account_type == 'vendor'%>
     <div>
         <%= o.label :origin %>
         <%= o.text_field :origin %>
@@ -25,6 +26,17 @@
         <%= o.label :cube %>
         <%= o.text_field :cube %>
     </div>
+    <% end %>
+    <% if current_user.account_type == 'carrier' %>
+        <div>
+            Enter Carrier Contact Information
+        </div>
+        </br>
+        <div>
+            <%= o.label :carrier %>
+            <%= o.text_field :carrier %>
+        </div>
+    <% end %>
 
   <%= o.submit "Update Order" %>
 <% end %>

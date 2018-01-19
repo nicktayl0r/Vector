@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  delete '/users/:user_id/locations/:location_id', to: "locations#destroy"
+
   get 'static_pages/home'
 
   get 'static_pages/help'
@@ -14,6 +17,11 @@ Rails.application.routes.draw do
   resources :users do
     resources :locations, :orders
   end
-  
+
+  resources :users do
+    member do
+      delete :delete_location, to: "locations#delete_comment", as: "delete_comment"
+    end
+  end
   resources :sessions, only: [:new, :create, :destroy]
 end

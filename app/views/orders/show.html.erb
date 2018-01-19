@@ -1,0 +1,17 @@
+<h1>Order Information</h1>
+
+<ul>
+    <li>
+        <%= @order.origin %>
+    </li>
+    <li>
+        <%= @order.destination %> 
+    </li>
+    <li>
+        <%= @order.delivery_deadline %>
+    </li>
+    <li>
+        <%= @order.price %> 
+    </li>
+</ul>
+<%=link_to "Return to Order Viewer", user_orders_path %>

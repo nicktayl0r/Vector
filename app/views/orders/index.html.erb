@@ -1,13 +1,23 @@
 <h2> Orders for <%= current_user.email %></h2>
 <ul>
-	<%= @user.orders.each do %>
-		<li>
-			<%= order.origin.to_s + " " + order.destination.to_s + " " + order.delivery_deadline.to_s + " " + order.price.to_s + " " + order.weight.to_s + " | " + order.cube.to_s %> -|- 
-			<%= link_to "delete", user_order_path(current_user.id, :id), method: :delete, data: { confirm: "Remove Order" } %>
-			<%= link_to "edit", edit_user_order_path(current_user.id, order.id) %>
-		</li>
+	<% if current_user.account_type == "vendor" %>
+		<% current_user.orders.each do |o| %>
+			<li>
+				<%= o.origin.to_s + " " +o.destination.to_s + " " +o.delivery_deadline.to_s + " " +o.price.to_s + " " +o.weight.to_s + " | " +o.cube.to_s %> -|- 
+				<%= link_to "delete", user_order_path(current_user.id, o.id), method: :delete, data: { confirm: "Remove Order" } %>
+				<%= link_to "edit", edit_user_order_path(current_user.id,o.id) %>
+			</li>
+		<% end %>
+	<% else %>
+		<%	Order.where(carrier: nil).each do |o| %>
+			<li>
+				<%= o.origin.to_s + " " +o.destination.to_s + " " +o.delivery_deadline.to_s + " " +o.price.to_s + " " +o.weight.to_s + " | " +o.cube.to_s %> -|- 
+				<%= link_to "view detail", user_order_path(current_user.id, o.id) %>
+				<%= link_to "Choose Load", edit_user_order_path(current_user.id,o.id) %>
+				
+			</li>
+		<% end %>
 	<% end %>
 </ul>
 
-#if statement if admin one link if vendor another, etc
 <%= link_to "Return to Dashboard", root_path + current_user.account_type.to_s %>

@@ -4,9 +4,13 @@ class UsersController < ApplicationController
     end
     def show
         @user = User.find(params[:id])
+
     end
     def index
         @users = User.all
+        @locations = locations.new
+        @orders = orders.new
+        
     end
     def create
         @user = User.new(user_params)
