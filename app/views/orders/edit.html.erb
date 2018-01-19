@@ -1,7 +1,7 @@
 <h1>Order No. <%= @order.id %></h1>
 
 <%= form_for [:user, @order] do |o| %>
-    <% if current_user.account_type == 'vendor'%>
+    <% if current_user.account_type != 'carrier' %>
     <div>
         <%= o.label :origin %>
         <%= o.text_field :origin %>

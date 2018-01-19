@@ -1,4 +1,8 @@
-<div>
+
+
+<div class="home-body">
+
+<div class="user-in">
     <h1>Log in</h1>
     <p id="alert"><%= alert %></p>
     <%= form_tag sessions_path do %>
@@ -13,7 +17,8 @@
       <div class="actions"><%= submit_tag "Log In" %></div>
     <% end %>
 </div>
-<div>
+
+<div class="user-in">
     <h1>Sign Up</h1>
     <%= form_for @user do |f| %>
       <% if @user.errors.any? %>
@@ -41,13 +46,20 @@
       </div>
 
       <div class="field">
-        <%= f.label :account_type %><br />
-        <%= f.label :account_type, "carrier", :value => "carrier"  %>
-        <%= f.radio_button :account_type, "carrier" %>
-        <%= f.label :account_type, "vendor", :value => "vendor" %>
-        <%= f.radio_button :account_type, "vendor" %>
+        <ul> 
+          <%= f.label :account_type %><br />
+          <li>
+            <%= f.label :account_type, "Carrier", :value => "carrier"  %>
+            <%= f.radio_button :account_type, "carrier" %>
+          </li>
+          <li>
+            <%= f.label :account_type, "Vendor", :value => "vendor" %>
+            <%= f.radio_button :account_type, "vendor" %>
+          </li>
+        </ul>
       </div>
       <div class="actions"><%= f.submit %></div>
       
     <% end %>
+</div>
 </div>

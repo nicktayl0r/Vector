@@ -14,7 +14,7 @@
 		<%	Order.where(carrier: nil).each do |o| %>
 			<li>
 				<%= o.origin.to_s + " " +o.destination.to_s + " " +o.delivery_deadline.to_s + " " +o.price.to_s + " " +o.weight.to_s + " | " +o.cube.to_s %> -|- 
-				<%= link_to "view detail", user_order_path(current_user.id, o.id) %>
+				<%= link_to "Detail", user_order_path(current_user.id, o.id) %>
 				<%= link_to "Choose Load", edit_user_order_path(current_user.id,o.id) %>
 				
 			</li>

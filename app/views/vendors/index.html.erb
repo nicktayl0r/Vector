@@ -1,6 +1,6 @@
 <ul>
     <li><%= link_to "Create a new Order", new_user_order_path(current_user.id) %></li>
+    <li><%= link_to "View Orders", user_orders_path(current_user.id) %></li>
     <li><%= link_to "Create a new Location", new_user_location_path(current_user.id) %></li>
     <li><%= link_to "View Locations", user_locations_path(current_user.id) %></li>
-    <li><%= link_to "View Orders", user_orders_path(current_user.id) %></li>
 </ul>

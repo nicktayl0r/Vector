@@ -18,3 +18,12 @@ This application was made with Ruby on Rails and PostGreSQL.
 ## Join Vector
 [Hosted on Heroku](https://wdi-vector.herokuapp.com)
 
+
+
+[View on Trello](https://trello.com/b/7AGGP0r6)
+
+## Future Items
+
+* Upload Images/ Identification
+* create a favicon
+* Create a ratings systems

@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+
   <head>
     <title>Vector</title>
     <%= csrf_meta_tags %>
@@ -7,18 +6,18 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-  <p>
-  <% if current_user %>
-    Welcome, <%= current_user.email %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
-  <% else %>
-    <%= link_to 'Log In', login_path %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Sign Up', new_user_path %>
-  <% end %>
-</p>
+  <body id="hello">
+    <p>
+      <% if current_user %>
+        Welcome, <%= current_user.email %>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+      <% else %>
+        <%= link_to 'Log In', login_path %>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <%= link_to 'Sign Up', new_user_path %>
+      <% end %>
+    </p>
+    </body>
     <%= yield %>
-  </body>
-</html>
+
