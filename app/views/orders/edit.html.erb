@@ -1,44 +1,43 @@
-<h1>Order No. <%= @order.id %></h1>
-
+<h2>Order No. <%= @order.id %></h2>
+<div class="home-body">
 <%= form_for [:user, @order] do |o| %>
     <% if current_user.account_type != 'carrier' %>
-    <div>
-        <%= o.label :origin %>
-        <%= o.text_field :origin %>
-    </div>
-    <div>
-        <%= o.label :destination %>
-        <%= o.text_field :destination %>
-    </div>
-    <div>
-        <%= o.label :delivery_deadline %>
-        <%= o.text_field :delivery_deadline %>
-    </div>
-    <div>
-        <%= o.label :price %>
-        <%= o.text_field :price %>
-    </div>
-    <div>
+        <div>
+            <%= o.label :origin %>
+            <%= o.text_field :origin %>
+        </div>
+        <div>
+            <%= o.label :destination %>
+            <%= o.text_field :destination %>
+        </div>
+        <div>
         <%= o.label :weight %>
         <%= o.text_field :weight %>
-    </div>
-    <div>
-        <%= o.label :cube %>
-        <%= o.text_field :cube %>
-    </div>
-    <% end %>
-    <% if current_user.account_type == 'carrier' %>
-        <div>
-            Enter Carrier Contact Information
         </div>
+        <div>
+        <div>
+        <%= o.label :cubic_meters %>
+        <%= o.text_field :cube %>
+        </div>
+        <%= o.label :price %>
+        <%= o.text_field :price %>
+        </div>
+        <div>
+            <%= o.label :delivery_deadline %>
+            <%= o.text_field :delivery_deadline %>
+        </div>
+    <% elsif current_user.account_type == 'carrier' %>
+        <h2>
+            Enter Carrier Contact Information
+        </h2>
         </br>
         <div>
             <%= o.label :carrier %>
             <%= o.text_field :carrier %>
         </div>
     <% end %>
-
   <%= o.submit "Update Order" %>
 <% end %>
 
 <%= link_to "Return to Orders", user_orders_path %>
+</div>

@@ -1,5 +1,5 @@
-<h1>Edit <%= @user.email %> </h1>
-
+<h2>Edit <%= @user.email %> </h2>
+<div class="home-body">
 <%= form_for @user do |u| %>
   <div>
     <%= u.label :email %>
@@ -30,3 +30,4 @@
 <% end %>
 
 <%= link_to "Back to the User Viewer", users_path %>
+</div>

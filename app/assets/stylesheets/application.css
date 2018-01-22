@@ -16,48 +16,107 @@
 * {
     color: #fffff2;	
     text-decoration: none;
-    font-family: sans-serif;
     box-sizing: border-box;
     margin: none;
-
-
-
+    font-family: 'Josefin Sans', sans-serif;
 }
 
+
+input {
+    float: right;
+  }
+
 body{
-    background: linear-gradient(45deg,navy, goldenrod);
-
+    background-image: url("https://i.imgur.com/NDcgs2o.jpg");
+    background-size: cover;
+    margin: 0;
     padding: none;
-
 }
 
  .home-body {
     display: flex;
-    width: 50%;
-    align-items: center;
-    margin: 0 auto;
+    width: 620px;
+    margin: 20vh auto;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    transition-duration: 1s;
+}
+
+.home-body:hover {
+    background: rgba(0, 0, 0, .9);
+    transition-duration: 1s;
 }
 
 .user-in {
-    max-width: 100%;
-    border-bottom: 1px solid white;
-    margin-right: 5px;
-    margin: 0 25px;
+    min-width: 50%;
+    position:relative;
+    padding: 20px;
+    margin-bottom: 5px;
 }
+
+label {
+    clear: both;
+    float: left;
+    text-align: right;
+}
+select {
+    color:black;
+    float: right;
+}
+
 input {
     color: black;
+    margin-bottom: 10px;
 }
-p {
-    background-color: black;
-    opacity: 0.5;
-    margin: 0;
+
+.header {
+    background: rgba(0, 0, 0, .5);
+    padding: 10px;
+    transition-duration: 2s;
+}
+
+.header:hover {
+    background: rgba(0, 0, 0, .9);
+    transition-duration: 2s;
+}
+
+h2 {
+    color:white;
+    text-shadow: 2px 2px #000
 }
 
 ul {
     list-style-type: none;
-    margin: auto;
+    float: left;
+    padding: 0;
+}
+
+li {
+    margin: none;
+}
+a {
+    color: white;
 }
 
 a:hover {
     font-style:oblique;
+    color:white;
+    text-decoration: none;
+}
+
+input[type=submit] {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+input[type=submit]:hover {
+    background:black;
+    color:white;
+    border: 1px solid white;
+}
+
+#clock {
+    float: right;
+    margin:none;
 }

@@ -1,4 +1,5 @@
-<h2> Orders for <%= current_user.email %></h2>
+<h2> Order Viewer</h2>
+<div class="home-body">
 <ul>
 	<% if current_user.account_type == "vendor" %>
 		<% current_user.orders.each do |o| %>
@@ -13,7 +14,7 @@
 	<% else %>
 		<%	Order.where(carrier: nil).each do |o| %>
 			<li>
-				<%= o.origin.to_s + " " +o.destination.to_s + " " +o.delivery_deadline.to_s + " " +o.price.to_s + " " +o.weight.to_s + " | " +o.cube.to_s %> -|- 
+				<%= o.origin.to_s + " " +o.destination.to_s + " " +o.delivery_deadline.to_s + " " +o.price.to_s + " " +o.weight.to_s + " | " +o.cube.to_s + o.carrier.to_s %> -|- 
 				<%= link_to "Detail", user_order_path(current_user.id, o.id) %>
 				<%= link_to "Choose Load", edit_user_order_path(current_user.id,o.id) %>
 				
@@ -23,3 +24,4 @@
 </ul>
 
 <%= link_to "Return to Dashboard", root_path + current_user.account_type.to_s %>
+</div>

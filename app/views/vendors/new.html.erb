@@ -1,4 +1,6 @@
-    <%= form_for @order do |item| %>
+
+<div class="home-body">
+<%= form_for @order do |item| %>
         <div>
           <%= item.label :origin %>
           <%= item.text_field :origin %>
@@ -10,3 +12,4 @@
         <%= item.submit "create" %>
     <% end %>
     <%= link_to "HOME", vendor_path %>
+</div>

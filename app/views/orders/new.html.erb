@@ -1,4 +1,5 @@
-<h1>New Order</h1>
+<h2>New Order</h2>
+<div class="home-body">
 <%= form_for [:user, @order] do |o| %>
     <div>
         <%= o.label :origin %>
@@ -13,7 +14,7 @@
         <%= o.text_field :weight %>
     </div>
     <div>
-        <%= o.label :cube %>
+        <%= o.label :cubic_meters %>
         <%= o.text_field :cube %>
     </div>
     <div>
@@ -26,4 +27,5 @@
     </div>
   <%= o.submit "Create New Order" %>
 <% end %>
-<%= link_to "Return Home", vendor_path %>
+<%= link_to "Return to Dashboard", vendor_path %>
+</div>

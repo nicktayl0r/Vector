@@ -17,7 +17,13 @@ class UsersController < ApplicationController
         if @user.save
             session[:user_id] = @user.id
             flash[:notice] = "You are now signed up."
-            redirect_to root_path
+            if @user.account_type == "admin"
+                redirect_to admin_path
+              elsif @user.account_type == "vendor"
+                redirect_to vendor_path
+              else
+                redirect_to carrier_path
+              end
         else
             render :new
         end
